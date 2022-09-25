@@ -16,7 +16,7 @@ public class QuickSort {
         int mid=s+(e-s)/2;
         int pivot=arr[mid];
         while(s<=e){
-//            also a reason why if its already sorted it will not swap
+            /* also a reason why if its already sorted it will not swap */
             while(arr[s]<pivot){
                 s++;
             }
