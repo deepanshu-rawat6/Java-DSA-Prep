@@ -1,4 +1,4 @@
-package com.deepanshu.oops;
+package com.deepanshu.oops.Introduction;
 
 public class WrapperExample {
     public static void main(String[] args) {
@@ -23,6 +23,11 @@ public class WrapperExample {
         // when a non primitive is final, you cannot reassign it.
 //        kunal = new A("new object");
 
+//        Whenever we call print out an object, if we want to specify the text
+//        Then we can override the toString() method
+
+
+//        The default toString() method prints out : getClass().getName()+"@"+Integer.toHexString(hashCode());
         A obj = new A("Rnadvsjhv");
 
         System.out.println(obj);
