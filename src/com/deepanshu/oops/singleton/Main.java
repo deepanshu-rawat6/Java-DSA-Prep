@@ -1,4 +1,6 @@
-package com.deepanshu.oops.packages.singleton;
+package com.deepanshu.oops.singleton;
+
+import com.deepanshu.oops.access.A;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,5 +12,9 @@ public class Main {
         Singleton obj3=Singleton.getInstance();
 
 //        all 3  reference vars are pointing to just one object
+
+
+        A a=new A(10,"Deepanshu");
+        a.getNum();
     }
 }

@@ -1,4 +1,4 @@
-package com.deepanshu.oops.packages.singleton;
+package com.deepanshu.oops.singleton;
 
 //Singleton class means only one object can be created
 public class Singleton {
