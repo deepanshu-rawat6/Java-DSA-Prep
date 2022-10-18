@@ -1,2 +1,3 @@
 # Java-DSA-Interview-Prep
-This repo contains all lecture codes  for DSA
+
+#Repo contains DSA, Problem Solving and OOPs concepts
