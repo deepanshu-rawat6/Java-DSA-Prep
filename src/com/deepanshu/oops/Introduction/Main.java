@@ -38,6 +38,10 @@ public class Main {
         Student random = new Student(kunal);
         System.out.println(random.name);
 
+//        random.name = "Deepanshu";
+//        System.out.println(random.name);
+//        System.out.println(kunal.name);
+
         Student random2 = new Student();
         System.out.println(random2.name);
 
