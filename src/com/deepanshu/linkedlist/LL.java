@@ -8,6 +8,8 @@ public class LL {
         private int val;
         private Node next;
 
-        public
+        public Node(){
+            
+        }
     }
 }
