@@ -9,7 +9,7 @@ public class LL {
         private Node next;
 
         public Node(){
-            
+
         }
     }
 }
