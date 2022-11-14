@@ -1,5 +1,5 @@
 package com.deepanshu.practice;
-
+// Index of the last occurance of a target number in an array
 public class Recursive {
     static int index = 0;
     static int ans = -1;
