@@ -8,5 +8,9 @@ public class Main_Linked_List {
         list.insert_at_First(9);
         list.insert_at_First(8);
         list.display();
+        list.insert_at_Last(99);
+        list.display();
+        list.insert(100,3);
+        list.display();
     }
 }
