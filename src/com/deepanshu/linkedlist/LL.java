@@ -12,7 +12,7 @@ public class LL {
     }
 
 //    This operation takes O(1) time complexity
-    public void insert_at_First (int val) {
+    public void insertFirst (int val) {
         Node node = new Node(val);
         node.next = head;
         head = node;
@@ -23,9 +23,10 @@ public class LL {
         size += 1;
     }
 
-    public void insert_at_Last (int val) {
+//    this operation takes constant time complexity, because we are maintaining the tail
+    public void insertLast (int val) {
         if (tail == null) {
-            insert_at_First(val);
+            insertFirst(val);
             return;
         }
         Node node = new Node(val);
@@ -52,13 +53,14 @@ public class LL {
          */
     }
 
+//    this operation takes linear time
     public void insert(int val,int index) {
         if (index == 0) {
-            insert_at_First(val);
+            insertFirst(val);
             return;
         }
         if (index == size) {
-            insert_at_Last(val);
+            insertLast(val);
             return;
         }
         Node temp = head;
@@ -69,6 +71,64 @@ public class LL {
 
         temp.next = node;
         size += 1;
+    }
+
+//    this operation takes O(1) operation
+    public int deleteFirst() {
+        int val = head.value;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        size -= 1;
+        return val;
+    }
+
+//    this operation takes linear time complexity
+    public int deleteLast() {
+        if (size <= 1) {
+            return deleteFirst();
+        }
+
+        Node secondlast = get(size - 2);
+        int val = tail.value;
+        tail = secondlast;
+        tail.next = null;
+        return val;
+    }
+
+//    linear time complexity
+    public int delete(int index) {
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == size - 1) {
+            return deleteLast();
+        }
+
+        Node prev = get(index - 1);
+        int val =  prev.next.value;
+        prev.next = prev.next.next;
+        return val;
+    }
+
+    public Node find(int value) {
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+//    this operation is used to take the required Node
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
     }
 
 //    This operation takes O(n) time complexity
