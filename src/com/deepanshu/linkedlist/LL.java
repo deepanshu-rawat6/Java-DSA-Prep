@@ -1,7 +1,7 @@
 package com.deepanshu.linkedlist;
 
 public class LL {
-//    benefits of using an extra "tail" variable, some operations which require traversal at end of the list, can takes
+//    benefits of using an extra "tail" variable, some operations which require traversal at end of the list, can take
 //    const time complexity instead of linear time complexity
     private Node head;
     private Node tail;
