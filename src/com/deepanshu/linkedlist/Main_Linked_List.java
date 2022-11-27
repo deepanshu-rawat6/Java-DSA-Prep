@@ -29,29 +29,32 @@ public class Main_Linked_List {
         System.out.println(list.delete(2));
         list.display();
 
-        System.out.println("\nDoubly Linked List operations:\n");
-        DLL Dlist = new DLL();
-        Dlist.insertFirst(3);
-        Dlist.insertFirst(2);
-        Dlist.insertFirst(8);
-        Dlist.insertFirst(17);
-
+//        System.out.println("\nDoubly Linked List operations:\n");
+//        DLL Dlist = new DLL();
+//        Dlist.insertFirst(3);
+//        Dlist.insertFirst(2);
+//        Dlist.insertFirst(8);
+//        Dlist.insertFirst(17);
+//
+////        Dlist.display();
+////        adding element to the end of DLl
+//        Dlist.insertLast(99);
+////        Dlist.display();
+//
+//        Dlist.insert(8,65);
 //        Dlist.display();
-//        adding element to the end of DLl
-        Dlist.insertLast(99);
-//        Dlist.display();
+//
+//
+//        CLL Clist = new CLL();
+//        Clist.insert(23);
+//        Clist.insert(3);
+//        Clist.insert(19);
+//        Clist.insert(75);
+//        Clist.display();
+//        Clist.delete(19);
+//        Clist.display();
 
-        Dlist.insert(8,65);
-        Dlist.display();
-
-
-        CLL Clist = new CLL();
-        Clist.insert(23);
-        Clist.insert(3);
-        Clist.insert(19);
-        Clist.insert(75);
-        Clist.display();
-        Clist.delete(19);
-        Clist.display();
+        list.insertRecursion(1000,2);
+        list.display();
     }
 }
