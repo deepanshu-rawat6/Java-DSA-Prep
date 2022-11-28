@@ -180,6 +180,7 @@ public class LL {
 
 //    questions related to LL
 //    remove duplicates from sorted list
+//    https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
     public void remove_duplicates() {
         Node node = head;
 
@@ -223,6 +224,48 @@ public class LL {
         }
 
         return ans;
+    }
+
+//    cycle detection using fast and slow pointers
+    public boolean hasCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+            return true;
+            }
+        }
+
+        return false;
+    }
+
+
+//    finding the length of the cycle
+//    https://leetcode.com/problems/linked-list-cycle/description/
+//    Amazon and Microsoft
+    public int lenCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                int len = 0;
+                do {
+                    len++;
+                    slow = slow.next;
+                } while (slow != fast);
+                return len;
+            }
+        }
+
+        return 0;
     }
 
     public static void main(String[] args) {
