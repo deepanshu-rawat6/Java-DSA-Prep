@@ -1,3 +1,3 @@
-# Java-DSA-Interview-Prep
+# Java-DSA-Prep
 
 #Repo contains DSA, Problem Solving and OOPs concepts
