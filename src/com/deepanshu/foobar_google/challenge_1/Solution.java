@@ -1,6 +1,7 @@
 package com.deepanshu.foobar_google.challenge_1;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Solution {
@@ -9,14 +10,9 @@ public class Solution {
     }
 
     public static int solution(int[] x,int[] y) {
-        HashSet<Integer> set = new HashSet<>();
-        for (int i : x) {
-            set.add(i);
-        }
-        for (int i : y) {
-            if (!set.contains(i)) {
-                return i;
-            }
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < x.length; i++) {
+//            if ()
         }
         return 0;
     }
