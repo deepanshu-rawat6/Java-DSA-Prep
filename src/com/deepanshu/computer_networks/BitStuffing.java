@@ -36,3 +36,6 @@ public class BitStuffing {
         obj.display();
     }
 }
+
+// Test Case
+// Stream of bits : 01111111110
