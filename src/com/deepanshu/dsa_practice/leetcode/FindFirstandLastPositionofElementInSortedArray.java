@@ -1,6 +1,6 @@
 package com.deepanshu.dsa_practice.leetcode;
 
-public class FindFirstandLastPositionofElementinSortedArray {
+public class FindFirstandLastPositionofElementInSortedArray {
     public static void main(String[] args) {
         int[] nums = {5,7,7,8,8,10};
         int target  = 7;
