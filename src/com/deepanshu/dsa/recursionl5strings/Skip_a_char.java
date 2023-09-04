@@ -1,4 +1,4 @@
-package com.deepanshu.dsa.recursionl3strings;
+package com.deepanshu.dsa.recursionl5strings;
 
 public class Skip_a_char {
     public static void main(String[] args) {
@@ -14,11 +14,11 @@ public class Skip_a_char {
             System.out.println(p);
             return;
         }
-        char ch=up.charAt(0);
-        if(ch=='a'){
-            cal(p,up.substring(1));
+        char ch = up.charAt(0);
+        if(ch == 'a'){
+            cal(p, up.substring(1));
         }else{
-            cal(p+ch,up.substring(1));
+            cal(p + ch, up.substring(1));
         }
     }
 
@@ -26,11 +26,11 @@ public class Skip_a_char {
         if(up.isEmpty()){
             return "";
         }
-        char ch=up.charAt(0);
-        if(ch=='a'){
+        char ch = up.charAt(0);
+        if(ch == 'a'){
             return cal_return(up.substring(1));
         }else{
-            return ch+cal_return(up.substring(1));
+            return ch + cal_return(up.substring(1));
         }
     }
 
@@ -42,7 +42,7 @@ public class Skip_a_char {
         if(up.startsWith("apple")){
             return cal_string(up.substring(5));
         }else{
-            return up.charAt(0)+cal_string(up.substring(1));
+            return up.charAt(0) + cal_string(up.substring(1));
         }
     }
 
@@ -54,7 +54,7 @@ public class Skip_a_char {
         if(up.startsWith("app") && !up.startsWith("apple")){
             return cal_skip_app(up.substring(3));
         }else{
-            return up.charAt(0)+cal_skip_app(up.substring(1));
+            return up.charAt(0) + cal_skip_app(up.substring(1));
         }
     }
 }
