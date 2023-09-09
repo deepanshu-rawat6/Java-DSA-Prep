@@ -30,6 +30,7 @@ public class LL {
             return;
         }
         Node node = new Node(val);
+//      We can even do node.next = null, but since the newly created node.next would be automatically pointing to null
         tail.next = node;
         tail = node;
         size += 1;

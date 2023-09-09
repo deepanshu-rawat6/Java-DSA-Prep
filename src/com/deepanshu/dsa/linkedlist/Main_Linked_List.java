@@ -1,7 +1,5 @@
 package com.deepanshu.dsa.linkedlist;
 
-import org.w3c.dom.ls.DOMImplementationLS;
-
 public class Main_Linked_List {
     public static void main(String[] args) {
         LL list = new LL();
