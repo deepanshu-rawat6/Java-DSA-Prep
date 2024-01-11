@@ -6,15 +6,26 @@ import java.util.List;
 
 public class SubSet {
     public static void main(String[] args) {
-//        int[] arr={1,2,3};
-//        List<List<Integer>> ans=subset(arr);
-//        for(List<Integer> list:ans){
-//            System.out.println(list);
-//        }
-        int[] arr={2,1,2};
-        List<List<Integer>> ans=subsetDuplicate(arr);
+        int[] arr={1,2,3};
+        List<List<Integer>> ans=subset(arr);
         System.out.println(ans);
+//        int[] arr1={2,1,2};
+//        List<List<Integer>> ans1=subsetDuplicate(arr1);
+//        System.out.println(ans1);
 
+//        int[] nums = {1,2,3};
+//
+//        List<List<Integer>> ans = new ArrayList<>();
+//
+//        if (nums == null || nums.length == 0) {
+//            System.out.println(ans);
+//        }
+//
+//        Arrays.sort(nums);
+//
+//        subsetRecursion(ans, new ArrayList<>(), nums, 0);
+//
+//        System.out.println(ans);
     }
     static List<List<Integer>> subset(int[] arr){
         List<List<Integer>> outer=new ArrayList<>();
@@ -28,6 +39,28 @@ public class SubSet {
             }
         }
         return outer;
+    }
+
+    static void subsetRecursion(List<List<Integer>> ans, List<Integer> list, int[] nums, int x) {
+        if (x >= nums.length) {
+            ans.add(new ArrayList<>(list));
+            return;
+        }
+
+        list.add(nums[x]);
+        subsetRecursion(ans, list, nums, x + 1);
+
+        list.remove(list.size() - 1);
+        subsetRecursion(ans, list, nums, x + 1);
+    }
+
+    static void subsetDuplicateRecursion(List<List<Integer>> list, List<Integer> tempList, int[] nums, int index) {
+        if (index >= nums.length) {
+            list.add(new ArrayList<>(tempList));
+            return;
+        }
+
+
     }
 
     static List<List<Integer>> subsetDuplicate(int[] arr){

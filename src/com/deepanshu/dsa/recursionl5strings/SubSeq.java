@@ -44,7 +44,7 @@ public class SubSeq {
         char ch=up.charAt(0);
         subseqASCII(p+ch,up.substring(1));
         subseqASCII(p,up.substring(1));
-        subseqASCII(p+(ch+0),up.substring(1));
+        subseqASCII(p+(ch + 0),up.substring(1));
     }
     static ArrayList<String> subseq1ASCII(String p, String up){
         if(up.isEmpty()){
