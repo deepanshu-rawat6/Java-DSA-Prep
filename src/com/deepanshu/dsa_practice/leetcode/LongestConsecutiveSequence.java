@@ -15,22 +15,6 @@ public class LongestConsecutiveSequence {
         System.out.println(longestConsecutive(nums));
     }
     public static int longestConsecutive(int[] nums) {
-//        if (nums.length == 0) {
-//            return 0;
-//        }
-//        int c = 1, temp = 1;
-//        Arrays.sort(nums);
-//        System.out.println(Arrays.toString(nums));
-//        for (int i = 1; i < nums.length; i++) {
-//            c = Math.max(c, temp);
-//            if (nums[i - 1] + 1 == nums[i]) {
-//                temp++;
-//            } else {
-//                temp = 1;
-//            }
-//        }
-//        return c;
-
         int best = 0, y = 0;
         HashSet<Integer> set = new HashSet<>();
         for (int num : nums) {
