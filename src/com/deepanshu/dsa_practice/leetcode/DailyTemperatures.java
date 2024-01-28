@@ -25,10 +25,11 @@ class PairKV <K,V> {
 
 public class DailyTemperatures {
     public static void main(String[] args) {
-//        int[] temperatures = {73,74,75,71,69,72,76,73};
+        int[] temperatures = {73,74,75,71,69,72,76,73};
 //        int[] temperatures = {30,40,50,60};
-        int[] temperatures = {30,60,90};
+//        int[] temperatures = {30,60,90};
         System.out.println(Arrays.toString(dailyTemperatures(temperatures)));
+        System.out.println(Arrays.toString(dailyTemperaturesOptimized(temperatures)));
     }
 
 
@@ -71,5 +72,23 @@ public class DailyTemperatures {
         Collections.reverse(list);
 
         return list;
+    }
+
+
+    public static int[] dailyTemperaturesOptimized(int[] temperatures) {
+        Stack<PairKV<Integer, Integer>> stack = new Stack<>();
+        int[] res = new int[temperatures.length];
+
+        for (int i = 0; i < temperatures.length; i++) {
+            while (!stack.isEmpty() && stack.peek().getKey() < temperatures[i]) {
+                int stackIndex = stack.peek().getValue();
+                stack.pop();
+                res[stackIndex] = i - stackIndex;
+            }
+
+            stack.push(new PairKV<>(temperatures[i], i));
+        }
+
+        return res;
     }
 }

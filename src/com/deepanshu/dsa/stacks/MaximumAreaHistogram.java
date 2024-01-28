@@ -1,33 +1,20 @@
 package com.deepanshu.dsa.stacks;
 
+import com.deepanshu.dsa.recursion.FibonacciNthTermFormula;
+import com.deepanshu.java.oops.access.A;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
-class NGindex <K,V> {
-    private K key;
-    private V value;
-
-    public NGindex(K key,V value) {
-        this.key = key;
-        this.value = value;
-    }
-
-    public K getKey() {
-        return key;
-    }
-
-    public V getValue() {
-        return value;
-    }
-}
-
 public class MaximumAreaHistogram {
     public static void main(String[] args) {
-        int[] nums = {6,2,5,4,5,1,6};
+        int[] heights = {6,2,5,4,5,1,6};
 
-        System.out.println(maxAreaHistogram(nums));
+        System.out.println(largestRectangleArea(heights));
+        System.out.println(maxAreaHistogram(heights));
+//        System.out.println(calculateWidth(heights));
     }
 
     public static int maxAreaHistogram(int[] nums) {
@@ -114,5 +101,19 @@ public class MaximumAreaHistogram {
 //        System.out.println(width);
 
         return width;
+    }
+
+    public static int largestRectangleArea(int[] heights) {
+        int max = 0;
+
+        List<Integer> widths = calculateWidth(heights);
+        System.out.println(widths);
+        List<Integer> area = new ArrayList<>();
+
+        for (int i = 0; i < heights.length; i++) {
+           area.add(heights[i] * widths.get(i));
+        }
+
+        return Collections.max(area);
     }
 }
