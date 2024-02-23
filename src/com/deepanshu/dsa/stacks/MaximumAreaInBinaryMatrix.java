@@ -1,8 +1,5 @@
 package com.deepanshu.dsa.stacks;
 
-import com.deepanshu.dsa.recursion.FibonacciNthTermFormula;
-import com.deepanshu.java.oops.access.A;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
