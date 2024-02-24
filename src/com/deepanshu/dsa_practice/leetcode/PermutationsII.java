@@ -21,8 +21,6 @@ public class PermutationsII {
             list.add(new ArrayList<>(tempList));
         } else {
             for (int i = indx; i < nums.length; i++) {
-                if (i > indx && nums[i] == nums[i - 1])
-                    continue;
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, i + 1);
                 tempList.remove(tempList.size() - 1);
