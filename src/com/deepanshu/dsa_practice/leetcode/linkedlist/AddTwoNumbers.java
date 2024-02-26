@@ -28,7 +28,7 @@ public class AddTwoNumbers {
                     int temp = (l1.val + carry);
                     l1.val = temp % 10;
                     carry = temp / 10;
-//                    System.out.println("\nTemp: " + temp + " Carry: " + carry + " L1.val: " + l1.val);
+                    System.out.println("\nTemp: " + temp + " Carry: " + carry + " L1.val: " + l1.val);
                     l1.next = additionOfNumbers(l1.next, null, carry);
                 }
             }
@@ -36,7 +36,7 @@ public class AddTwoNumbers {
             int temp = (l1.val + l2.val + carry);
             l1.val = temp % 10;
             carry = temp / 10;
-//            System.out.println("\nTemp: " + temp + " Carry: " + carry + " L1.val: " + l1.val);
+            System.out.println("\nTemp: " + temp + " Carry: " + carry + " L1.val: " + l1.val);
             l1.next = additionOfNumbers(l1.next, l2.next, carry);
         }
         return l1;

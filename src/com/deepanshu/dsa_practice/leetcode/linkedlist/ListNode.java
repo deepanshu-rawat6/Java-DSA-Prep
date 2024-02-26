@@ -24,11 +24,6 @@ public class ListNode {
 
 
     ListNode insertAtHead(ListNode head, int value) {
-//        if (head == null) {
-//            head = new ListNode(value);
-//        } else {
-//            head = new ListNode(value, head);
-//        }
         head = new ListNode(value,head);
         size++;
         return head;

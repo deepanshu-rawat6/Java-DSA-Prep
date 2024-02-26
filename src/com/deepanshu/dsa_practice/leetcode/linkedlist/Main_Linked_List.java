@@ -11,6 +11,7 @@ public class Main_Linked_List {
         CycleProblemsInLinkedList cycleProblemsInLinkedList = new CycleProblemsInLinkedList();
         RemoveNthNodeFromEndofList removeNthNodeFromEndofList = new RemoveNthNodeFromEndofList();
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        MoreOnLinkedLists moreOnLinkedLists = new MoreOnLinkedLists();
 
         /*
 
@@ -81,10 +82,15 @@ public class Main_Linked_List {
 //        head = list.insertAtHead(head, 5);
 //
 //        list.displayLL(head);
-//        cycleLinkedList.addCycle(head, 2);
+//        cycleProblemsInLinkedList.addCycle(head, 2);
 //
-//        System.out.println("\nDoes the linked list have a cycle: " + cycleLinkedList.hasCycle(head));
-
+//        list.displayLL(head);
+//
+//        System.out.println("\nDoes the linked list have a cycle: " + cycleProblemsInLinkedList.hasCycle(head));
+//
+//        System.out.println("\nLength of the cycle: " + cycleProblemsInLinkedList.lengthCycle(head));
+//
+//        head = cycleProblemsInLinkedList.detectCycle(head);
         /*
 
          **************** Remove Nth Node From End of List ****************
@@ -101,7 +107,7 @@ public class Main_Linked_List {
 //
 //        list.displayLL(head);
 //
-//        head = removeNthNodeFromEndofList.removeNthFromEnd(head,1);
+//        head = removeNthNodeFromEndofList.removeNthFromEnd(head,2);
 //        list.displayLL(head);
 
         /*
@@ -110,13 +116,13 @@ public class Main_Linked_List {
 
          */
 
-        ListNode list1 = new ListNode();
+//        ListNode list1 = new ListNode();
+//
+//        ListNode head2 = null;
 
-        ListNode head2 = null;
-
-        head2 = list1.insertAtNthPos(null, 2, 0);
-        head2 = list1.insertAtTail(head2, 4);
-        head2 = list1.insertAtTail(head2, 9);
+//        head2 = list1.insertAtNthPos(null, 2, 0);
+//        head2 = list1.insertAtTail(head2, 4);
+//        head2 = list1.insertAtTail(head2, 9);
 
 //        head2 = list1.insertAtNthPos(null, 9, 0);
 //        head2 = list1.insertAtTail(head2, 9);
@@ -125,25 +131,102 @@ public class Main_Linked_List {
 //        head2 = list1.insertAtTail(head2, 9);
 //        head2 = list1.insertAtTail(head2, 9);
 //        head2 = list1.insertAtTail(head2, 9);
+//
+//        head2.displayLL(head2);
+//
+//        ListNode list2 = new ListNode();
+//        ListNode head3 = null;
 
-        head2.displayLL(head2);
-
-        ListNode list2 = new ListNode();
-        ListNode head3 = null;
-
-        head3 = list2.insertAtNthPos(null, 5, 0);
-        head3 = list2.insertAtTail(head3, 6);
-        head3 = list2.insertAtTail(head3, 4);
-        head3 = list2.insertAtTail(head3, 9);
+//        head3 = list2.insertAtNthPos(null, 5, 0);
+//        head3 = list2.insertAtTail(head3, 6);
+//        head3 = list2.insertAtTail(head3, 4);
+//        head3 = list2.insertAtTail(head3, 9);
 
 //        head3 = list2.insertAtNthPos(null, 9, 0);
 //        head3 = list2.insertAtTail(head3, 9);
 //        head3 = list2.insertAtTail(head3, 9);
 //        head3 = list2.insertAtTail(head3, 9);
+//
+//        head3.displayLL(head3);
+//
+//       head = addTwoNumbers.addTwoNumbers(head2, head3);
+//       head.displayLL(head);
 
-        head3.displayLL(head3);
+        /*
 
-       head = addTwoNumbers.addTwoNumbers(head2, head3);
-       head.displayLL(head);
+         **************** More On Linked Lists ****************
+
+         */
+//
+//        head = list.insertAtNthPos(null, -1, 0);
+//        head = list.insertAtTail(head, 5);
+//        head = list.insertAtTail(head, 3);
+//        head = list.insertAtTail(head, 4);
+//        head = list.insertAtTail(head, 0);
+////        head = list.insertAtTail(head, 6);
+//
+////        head = moreOnLinkedLists.middleNode(head);
+//
+//        head = moreOnLinkedLists.sortList(head);
+//
+//        list.displayLL(head);
+
+
+//        Delete the Middle Node of a Linked List
+
+        /*
+
+         **************** Delete the Middle Node of a Linked List ****************
+
+         */
+
+//        head = list.insertAtNthPos(head, 1, 0);
+//        head = list.insertAtTail(head, 3);
+//        head = list.insertAtTail(head, 4);
+//        head = list.insertAtTail(head, 7);
+//        head = list.insertAtTail(head, 1);
+//        head = list.insertAtTail(head, 2);
+//        head = list.insertAtTail(head, 6);
+
+//        list.displayLL(head);
+//
+//        head = cycleProblemsInLinkedList.deleteMiddle(head);
+//
+//        list.displayLL(head);
+
+        /*
+
+         **************** Remove Duplicates from Sorted List ****************
+
+         */
+
+//        head = list.insertAtNthPos(head, 1, 0);
+//        head = list.insertAtTail(head, 1);
+//        head = list.insertAtTail(head, 1);
+//        head = list.insertAtTail(head, 2);
+//        head = list.insertAtTail(head, 3);
+////        head = list.insertAtTail(head, 2);
+////        head = list.insertAtTail(head, 6);
+//
+//        list.displayLL(head);
+//
+//        head = moreOnLinkedLists.deleteDuplicates(head);
+//
+//        list.displayLL(head);
+
+
+        /*
+
+         **************** Reorder List ****************
+
+         */
+
+        head = list.insertAtNthPos(head, 1, 0);
+        head = list.insertAtTail(head, 2);
+        head = list.insertAtTail(head, 3);
+        head = list.insertAtTail(head, 4);
+        head = list.insertAtTail(head, 5);
+
+        moreOnLinkedLists.reorderList(head);
     }
 }
