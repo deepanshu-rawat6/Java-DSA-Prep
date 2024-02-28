@@ -1,5 +1,7 @@
 package com.deepanshu.dsa_practice.leetcode.linkedlist;
 
+import java.util.LinkedList;
+
 public class Main_Linked_List {
 
     public static ListNode head = null;
@@ -221,12 +223,12 @@ public class Main_Linked_List {
 
          */
 
-        head = list.insertAtNthPos(head, 1, 0);
-        head = list.insertAtTail(head, 2);
-        head = list.insertAtTail(head, 3);
-        head = list.insertAtTail(head, 4);
-        head = list.insertAtTail(head, 5);
-
-        moreOnLinkedLists.reorderList(head);
+//        head = list.insertAtNthPos(head, 1, 0);
+//        head = list.insertAtTail(head, 2);
+//        head = list.insertAtTail(head, 3);
+//        head = list.insertAtTail(head, 4);
+//        head = list.insertAtTail(head, 5);
+//
+//        moreOnLinkedLists.reorderList(head);
     }
 }
