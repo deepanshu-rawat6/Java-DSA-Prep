@@ -27,7 +27,7 @@ public class LongestPalindromeLength {
         int maxLength = -1;
 
         // Split the string into words
-        String[] words = s.split("\\s+");
+        String[] words = s.split(" ");
 
         for (String word : words) {
             // Check if the word is a palindrome and its length is greater than the current maxLength

@@ -1,6 +1,19 @@
 package com.deepanshu.dsa_practice.leetcode.linkedlist;
 
 public class ReverseLinkedList {
+    void displayLL(ListNode head) {
+        if (head == null) {
+            System.out.println("Linked List is empty!");
+        } else {
+            ListNode temp = head;
+            System.out.println("\nLinked List: ");
+            while(temp != null) {
+                System.out.print(temp.val + " -> ");
+                temp = temp.next;
+            }
+            System.out.print("END");
+        }
+    }
 
     public ListNode revIterative(ListNode head) {
         ListNode newHead = null;
@@ -23,6 +36,36 @@ public class ReverseLinkedList {
 //        return revIterative(head);
     }
 
+//    https://leetcode.com/problems/palindrome-linked-list/description/
+    public boolean isPalindrome(ListNode head) {
+        if (head.next == null) {
+            return true;
+        }
+        ListNode indx = head;
+        ListNode indxFromEnd = reverseList(getMid(indx));
+        while (indx != null && indxFromEnd != null) {
+            if (indx.val != indxFromEnd.val) {
+                return false;
+            }
+            indx = indx.next;
+            indxFromEnd = indxFromEnd.next;
+        }
+        return true;
+    }
+
+    public ListNode getMid(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = null;
+
+        while (fast != null && fast.next != null) {
+            slow = (slow == null) ? head : slow.next;
+            fast = fast.next.next;
+        }
+        ListNode mid = slow.next;
+        slow.next = null;
+
+        return mid;
+    }
 
 //    Reverse Nodes in k-Group
 //    public ListNode reverseKGroup(ListNode head, int k) {

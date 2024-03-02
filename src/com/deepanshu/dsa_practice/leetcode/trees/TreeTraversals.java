@@ -1,9 +1,5 @@
 package com.deepanshu.dsa_practice.leetcode.trees;
 
-import com.deepanshu.dsa.recursion.FibonacciNthTermFormula;
-import com.sun.source.tree.Tree;
-
-import javax.sound.sampled.Line;
 import java.util.*;
 
 public class TreeTraversals {
@@ -274,11 +270,38 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
     }
 
 //    https://leetcode.com/problems/invert-binary-tree/
-    public TreeNode invertTree(TreeNode root) {
+
+//    DFS
+    public TreeNode invertTreeDFS(TreeNode root) {
         if (root == null) {
             return null;
         }
-
-        
+        TreeNode node = new TreeNode(root.val);
+        node.left = invertTreeDFS(root.right);
+        node.right = invertTreeDFS(root.left);
+        return node;
     }
+
+//    BFS
+//    public boolean isEvenOddTree(TreeNode root) {
+//
+//    }
+
+//    BFS
+//    public TreeNode invertTreeBFS(TreeNode root) {
+//        if (root == null) {
+//            return null;
+//        }
+//
+//        Queue<TreeNode> queue = new LinkedList<>();
+//        queue.offer(root);
+//
+//        while (!queue.isEmpty()) {
+//            int levelSize = queue.size();
+//
+//            for (int i = 0; i < levelSize; i++) {
+//                TreeNode treeNode = queue.
+//            }
+//        }
+//    }
 }

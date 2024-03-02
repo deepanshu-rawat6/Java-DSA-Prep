@@ -34,12 +34,15 @@ public class Main_Binary_Tree {
         root = binaryTree.populate(nums);
 
         binaryTree.prettyDisplay();
+//        treeTraversals.invertTree(root);
+        System.out.println("\nAfter inverting:");
+        binaryTree.prettyDisplay();
 
-        List<List<Integer>> levelOrderTraversal = treeTraversals.levelOrder(root);
-        System.out.println(levelOrderTraversal);
-
-        List<List<Integer>> levelOrderTraversalBottom = treeTraversals.levelOrderBottom(root);
-        System.out.println(levelOrderTraversalBottom);
+//        List<List<Integer>> levelOrderTraversal = treeTraversals.levelOrder(root);
+//        System.out.println(levelOrderTraversal);
+//
+//        List<List<Integer>> levelOrderTraversalBottom = treeTraversals.levelOrderBottom(root);
+//        System.out.println(levelOrderTraversalBottom);
 
 //        List<Double> avgLevelOrder = treeTraversals.averageOfLevels(root);
 //        System.out.println(avgLevelOrder);
@@ -64,7 +67,7 @@ public class Main_Binary_Tree {
 //
 //        System.out.println(treeTraversals.isSameTree(root1, root2));
 
-        List<List<Integer>> zigzagOrderTraversal = treeTraversals.zigzagLevelOrder(root);
-        System.out.println(zigzagOrderTraversal);
+//        List<List<Integer>> zigzagOrderTraversal = treeTraversals.zigzagLevelOrder(root);
+//        System.out.println(zigzagOrderTraversal);
     }
 }
