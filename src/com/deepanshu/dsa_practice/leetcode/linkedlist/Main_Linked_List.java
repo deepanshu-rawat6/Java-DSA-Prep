@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Main_Linked_List {
 
-    public static ListNode head = null;
+    public static ListNode head1 = null;
 
     public static void main(String[] args) {
         ListNode list = new ListNode();
@@ -59,13 +59,13 @@ public class Main_Linked_List {
 //        head2.displayLL(head2);
 //
 //        ListNode list2 = new ListNode();
-//        ListNode head3 = null;
-//        head3 = list2.insertAtNthPos(null, 1, 0);
-//        head3 = list2.insertAtTail(head3, 3);
-//        head3 = list2.insertAtTail(head3, 4);
-//        head3.displayLL(head3);
+//        ListNode head2 = null;
+//        head2 = list2.insertAtNthPos(null, 1, 0);
+//        head2 = list2.insertAtTail(head2, 3);
+//        head2 = list2.insertAtTail(head2, 4);
+//        head2.displayLL(head2);
 //
-//        head = mergeTwoSortedLists.mergeTwoLists(head2, head3);
+//        head = mergeTwoSortedLists.mergeTwoLists(head2, head2);
 //        head.displayLL(head);
 
         /*
@@ -137,21 +137,21 @@ public class Main_Linked_List {
 //        head2.displayLL(head2);
 //
 //        ListNode list2 = new ListNode();
-//        ListNode head3 = null;
+//        ListNode head2 = null;
 
-//        head3 = list2.insertAtNthPos(null, 5, 0);
-//        head3 = list2.insertAtTail(head3, 6);
-//        head3 = list2.insertAtTail(head3, 4);
-//        head3 = list2.insertAtTail(head3, 9);
+//        head2 = list2.insertAtNthPos(null, 5, 0);
+//        head2 = list2.insertAtTail(head2, 6);
+//        head2 = list2.insertAtTail(head2, 4);
+//        head2 = list2.insertAtTail(head2, 9);
 
-//        head3 = list2.insertAtNthPos(null, 9, 0);
-//        head3 = list2.insertAtTail(head3, 9);
-//        head3 = list2.insertAtTail(head3, 9);
-//        head3 = list2.insertAtTail(head3, 9);
+//        head2 = list2.insertAtNthPos(null, 9, 0);
+//        head2 = list2.insertAtTail(head2, 9);
+//        head2 = list2.insertAtTail(head2, 9);
+//        head2 = list2.insertAtTail(head2, 9);
 //
-//        head3.displayLL(head3);
+//        head2.displayLL(head2);
 //
-//       head = addTwoNumbers.addTwoNumbers(head2, head3);
+//       head = addTwoNumbers.addTwoNumbers(head2, head2);
 //       head.displayLL(head);
 
         /*
@@ -259,18 +259,70 @@ public class Main_Linked_List {
 
          */
 
-        head = list.insertAtNthPos(head, 1, 0);
-        head = list.insertAtTail(head, 2);
-        head = list.insertAtTail(head, 3);
-        head = list.insertAtTail(head, 4);
-        head = list.insertAtTail(head, 5);
-//        head = list.insertAtTail(head, 6);
-//        head = list.insertAtTail(head, 7);
-        head = list.insertAtTail(head, 8);
+//        head = list.insertAtNthPos(head, 1, 0);
+//        head = list.insertAtTail(head, 2);
+//        head = list.insertAtTail(head, 3);
+//        head = list.insertAtTail(head, 4);
+//        head = list.insertAtTail(head, 5);
+////        head = list.insertAtTail(head, 6);
+////        head = list.insertAtTail(head, 7);
+//        head = list.insertAtTail(head, 8);
+//
+//        head = moreOnLinkedLists.oddEvenList(head);
+//
+//        list.displayLL(head);
 
-        head = moreOnLinkedLists.oddEvenList(head);
 
-        list.displayLL(head);
+        /*
 
+         **************** Remove Zero Sum Consecutive Nodes from Linked List ****************
+
+         */
+
+//        head = list.insertAtNthPos(head, 1 , 0);
+//        head = list.insertAtTail(head, 2);
+//        head = list.insertAtTail(head, -3);
+//        head = list.insertAtTail(head, 3);
+//        head = list.insertAtTail(head, -2);
+//
+//        head = MoreOnLinkedLists.removeZeroSumSublists(head);
+//
+//        list.displayLL(head);
+
+        /*
+
+         **************** Merge In Between Linked Lists ****************
+
+         */
+
+        ListNode list1 = new ListNode();
+
+        ListNode head1 = null;
+
+        head1 = list1.insertAtNthPos(null, 10, 0);
+        head1 = list1.insertAtTail(head1, 1);
+        head1 = list1.insertAtTail(head1, 13);
+        head1 = list1.insertAtTail(head1, 6);
+        head1 = list1.insertAtTail(head1, 9);
+        head1 = list1.insertAtTail(head1, 5);
+
+        head1.displayLL(head1);
+
+        ListNode list2 = new ListNode();
+        ListNode head2 = null;
+
+
+        head2 = list2.insertAtNthPos(null, 1000000, 0);
+        head2 = list2.insertAtTail(head2, 1000001);
+        head2 = list2.insertAtTail(head2, 1000002);
+
+
+        head2.displayLL(head2);
+
+        head1 = moreOnLinkedLists.mergeInBetween(head1, 3, 4, head2);
+        head1.displayLL(head1);
+
+
+//       head1.displayLL(head1);
     }
 }

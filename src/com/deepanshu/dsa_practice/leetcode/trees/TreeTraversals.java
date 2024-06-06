@@ -304,4 +304,209 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
 //            }
 //        }
 //    }
+
+//    https://leetcode.com/problems/sum-of-left-leaves/?envType=daily-question&envId=2024-04-14
+
+    public int sumOfLeftLeaves(TreeNode root) {
+//        Using BFS
+
+//        if (root == null) {
+//            return 0;
+//        }
+//
+//        int res = 0;
+//        Queue<TreeNode> queue = new LinkedList<>();
+//
+//        queue.offer(root);
+//
+//        while (!queue.isEmpty()) {
+//            TreeNode curr = queue.poll();
+//
+//            if (curr.left != null && curr.left.left == null && curr.left.right == null) {
+//                res += curr.left.val;
+//            }
+//            if (curr.left != null) queue.offer(curr.left);
+//            if (curr.right != null) queue.offer(curr.right);
+//        }
+//
+//        return res;
+
+//        Using DFS
+
+        if (root == null) {
+            return 0;
+        }
+
+        int res = 0;
+
+        if (root.left != null) {
+            if (root.left.left == null && root.left.right == null) {
+                res += root.left.val;
+            } else {
+                res += sumOfLeftLeaves(root.left);
+            }
+        }
+
+        res += sumOfLeftLeaves(root.right);
+
+        return res;
+    }
+
+//    https://leetcode.com/problems/diameter-of-binary-tree/description/
+
+    int maxDepth = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        height(root);
+        return maxDepth;
+    }
+
+    public int height(TreeNode root) {
+        if (root == null) {
+            return -1;
+        }
+
+        int L = height(root.left);
+        int R = height(root.right);
+
+        maxDepth = Math.max(maxDepth, L + R + 2);
+
+        return 1 + Math.max(L, R);
+    }
+
+
+//    https://leetcode.com/problems/sum-root-to-leaf-numbers/?envType=daily-question&envId=2024-04-15
+
+    public int sumNumbers(TreeNode root) {
+        return sum(root, 0);
+    }
+
+    public int sum(TreeNode root, int n) {
+        if (root == null) {
+            return 0;
+        }
+
+        if (root.right == null && root.left == null) {
+            return n * 10 + root.val;
+        }
+
+        return sum(root.left, n * 10 + root.val) + sum(root.right, n * 10 + root.val);
+    }
+
+//    https://leetcode.com/problems/path-sum/
+
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null) return false;
+        if (root.left == null && root.right == null && targetSum - root.val == 0) return true;
+
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+    }
+
+//    https://leetcode.com/problems/add-one-row-to-tree/description/?envType=daily-question&envId=2024-04-16
+
+    public TreeNode addOneRow(TreeNode root, int val, int depth) {
+
+//        BFS
+
+
+        if (depth == 1) {
+            return new TreeNode(val, root, null);
+        } else {
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.offer(root);
+            int k = 1;
+
+            while (!queue.isEmpty()) {
+                int levelSize = queue.size();
+                for (int i = 0; i < levelSize; i++) {
+                    if (k == depth - 1) {
+                        assert queue.peek() != null;
+                        TreeNode treeNode1 = new TreeNode(val, queue.peek().left, null);
+                        TreeNode treeNode2 = new TreeNode(val, null, queue.peek().right);
+                        queue.peek().left = treeNode1;
+                        queue.peek().right = treeNode2;
+                        queue.poll();
+                        break;
+                    } else {
+                        TreeNode curr = queue.poll();
+                        if (curr.left != null) {
+                            queue.offer(curr.left);
+                        }
+                        if (curr.right != null) {
+                            queue.offer(curr.right);
+                        }
+                    }
+                }
+                k++;
+            }
+
+            return root;
+        }
+
+
+
+
+//        DFS
+
+//        if (depth == 1) {
+//            return new TreeNode(val, root, null);
+//        } else {
+//            dfs_addOneRow(root, val, depth, 1);
+//            return root;
+//        }
+    }
+
+    public void dfs_addOneRow(TreeNode curr, int val, int depth, int k) {
+        if (curr == null) {
+            return;
+        }
+
+        if (k == depth - 1) {
+            TreeNode treeNode1 = new TreeNode(val, curr.left, null);
+            TreeNode treeNode2 = new TreeNode(val, null, curr.right);
+            curr.left = treeNode1;
+            curr.right = treeNode2;
+            return;
+        }
+
+        dfs_addOneRow(curr.left, val, depth, k + 1);
+        dfs_addOneRow(curr.right, val, depth, k + 1);
+    }
+
+
+//    https://leetcode.com/problems/smallest-string-starting-from-leaf/?envType=daily-question&envId=2024-04-17
+    String smallestString = "";
+
+    public String smallestFromLeaf(TreeNode root) {
+        dfs_smallestFromLeaf(root, new StringBuilder());
+        return smallestString;
+    }
+
+    public void dfs_smallestFromLeaf(TreeNode root, StringBuilder curString) {
+        if (root == null) {
+            return;
+        }
+
+        curString.insert(0, (char)(root.val + 'a'));
+
+        if (root.left == null && root.right == null) {
+            if (Objects.equals(smallestString, "") || smallestString.compareTo(curString.toString()) > 0) {
+                smallestString = curString.toString();
+            }
+            return;
+        }
+
+        if (root.left != null) {
+            dfs_smallestFromLeaf(root.left, curString);
+            curString.deleteCharAt(0);
+        }
+
+        if (root.right != null) {
+            dfs_smallestFromLeaf(root.right, curString);
+            curString.deleteCharAt(0);
+        }
+    }
 }

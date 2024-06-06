@@ -30,13 +30,18 @@ public class Main_Binary_Tree {
 //        tree.populate(nums);
 //        tree.display();
 
-        int[] nums = {1,2,3,4,5,6,7,8,9, Integer.MIN_VALUE,Integer.MIN_VALUE,10, Integer.MIN_VALUE, Integer.MIN_VALUE, 11};
+//        int[] nums = {1, 2};
+//        int[] nums = {5, 4, 8, 11, Integer.MIN_VALUE, 13, 4, 7, 2, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, 1};
+//        int[] nums = {4, 2, Integer.MIN_VALUE, 3, 1};
+        int[] nums = {4, 2, 6, 3, 1, 5, Integer.MIN_VALUE};
         root = binaryTree.populate(nums);
 
-        binaryTree.prettyDisplay();
+
+
+//        binaryTree.prettyDisplay();
 //        treeTraversals.invertTree(root);
-        System.out.println("\nAfter inverting:");
-        binaryTree.prettyDisplay();
+//        System.out.println("\nAfter inverting:");
+//        binaryTree.prettyDisplay();
 
 //        List<List<Integer>> levelOrderTraversal = treeTraversals.levelOrder(root);
 //        System.out.println(levelOrderTraversal);
@@ -69,5 +74,16 @@ public class Main_Binary_Tree {
 
 //        List<List<Integer>> zigzagOrderTraversal = treeTraversals.zigzagLevelOrder(root);
 //        System.out.println(zigzagOrderTraversal);
+
+//        System.out.println(treeTraversals.sumOfLeftLeaves(root));
+
+
+//        System.out.println(treeTraversals.sumNumbers(root));
+
+
+//        System.out.println(treeTraversals.hasPathSum(root, 22));
+
+        root = treeTraversals.addOneRow(root, 1, 3);
+        binaryTree.prettyDisplay();
     }
 }

@@ -2,7 +2,7 @@ package com.deepanshu.java.oops.singleton;
 
 //Singleton class means only one object can be created
 public class Singleton {
-    private Singleton(){
+    private Singleton() {
 
     }
     private static Singleton instance;

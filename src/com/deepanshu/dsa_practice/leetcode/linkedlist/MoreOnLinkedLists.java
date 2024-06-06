@@ -1,6 +1,9 @@
 package com.deepanshu.dsa_practice.leetcode.linkedlist;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MoreOnLinkedLists {
 
@@ -198,5 +201,76 @@ public class MoreOnLinkedLists {
         temp1.next = head2;
 
         return head;
+    }
+
+
+//    Remove Zero Sum Consecutive Nodes from Linked List
+//    Link: https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/description/?envType=daily-question&envId=2024-03-12
+
+    public static ListNode removeZeroSumSublists(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        int preSum = 0;
+        Map<Integer, ListNode> map = new HashMap<>();
+
+        for (ListNode curr = dummy; curr != null; curr = curr.next) {
+            preSum += curr.val;
+
+            if (map.containsKey(preSum)) {
+                ListNode prev = map.get(preSum);
+                ListNode toRemove = prev.next;
+
+                int p = preSum + (toRemove != null ? toRemove.val : 0);
+
+                while (p != preSum) {
+                    map.remove(p);
+                    assert toRemove != null;
+                    toRemove = toRemove.next;
+                    p += (toRemove != null ? toRemove.val : 0);
+                }
+
+                prev.next = curr.next;
+            } else {
+                map.put(preSum, curr);
+            }
+        }
+        return dummy.next;
+    }
+
+    public static int sizeOfLL(ListNode head) {
+        int size = 0;
+        ListNode temp = head;
+        while (temp.next != null) {
+            size++;
+            temp = temp.next;
+        }
+
+        return size;
+    }
+
+
+    public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        ListNode temp = list1, temp2 = null;
+
+        for (int i = 1; i < a; i++) {
+            temp = temp.next;
+        }
+
+        temp2 = temp.next;
+
+        for (int i = 0; i < (b - a + 1); i++) {
+            temp2 = temp2.next;
+        }
+
+        temp.next = list2;
+
+        while (list2.next != null) {
+            list2 = list2.next;
+        }
+
+        list2.next = temp2;
+
+        return list1;
     }
 }
