@@ -91,13 +91,15 @@ public class TreeTraversals {
             List<Integer> currentLevel = new ArrayList<>();
 
             for (int i = 0; i < levelSize; i++) {
+                assert queue.peek() != null;
                 if (queue.peek().left != null) {
                     queue.offer(queue.peek().left);
                 }
+                assert queue.peek() != null;
                 if (queue.peek().right != null) {
                     queue.offer(queue.peek().right);
                 }
-                currentLevel.add(queue.poll().val);
+                currentLevel.add(Objects.requireNonNull(queue.poll()).val);
             }
 
             res.add(currentLevel);
@@ -281,6 +283,11 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
         node.right = invertTreeDFS(root.left);
         return node;
     }
+
+//    BFS
+//    public TreeNode invertTreeBFS(TreeNode root) {
+//
+//    }
 
 //    BFS
 //    public boolean isEvenOddTree(TreeNode root) {
@@ -508,5 +515,25 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
             dfs_smallestFromLeaf(root.right, curString);
             curString.deleteCharAt(0);
         }
+    }
+
+//    https://leetcode.com/problems/balanced-binary-tree/
+    public boolean isBalanced(TreeNode root) {
+        if (root == null) return true;
+
+        return heightTree(root) != -1;
+    }
+
+    public int heightTree(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftHeight = heightTree(root.left);
+        int rightHeight = heightTree(root.right);
+
+        if (leftHeight == -1 || rightHeight == -1)  return -1;
+
+        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 }

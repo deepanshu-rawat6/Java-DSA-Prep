@@ -1,5 +1,6 @@
 package com.deepanshu.dsa_practice.leetcode.linkedlist;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Main_Linked_List {
@@ -295,34 +296,110 @@ public class Main_Linked_List {
 
          */
 
+//        ListNode list1 = new ListNode();
+//
+//        ListNode head1 = null;
+//
+//        head1 = list1.insertAtNthPos(null, 10, 0);
+//        head1 = list1.insertAtTail(head1, 1);
+//        head1 = list1.insertAtTail(head1, 13);
+//        head1 = list1.insertAtTail(head1, 6);
+//        head1 = list1.insertAtTail(head1, 9);
+//        head1 = list1.insertAtTail(head1, 5);
+//
+//        head1.displayLL(head1);
+//
+//        ListNode list2 = new ListNode();
+//        ListNode head2 = null;
+//
+//
+//        head2 = list2.insertAtNthPos(null, 1000000, 0);
+//        head2 = list2.insertAtTail(head2, 1000001);
+//        head2 = list2.insertAtTail(head2, 1000002);
+//
+//
+//        head2.displayLL(head2);
+//
+//        head1 = moreOnLinkedLists.mergeInBetween(head1, 3, 4, head2);
+//        head1.displayLL(head1);
+
+
+//       head1.displayLL(head1);
+
+        /*
+
+         **************** Merge k sorted lists ****************
+
+         */
+
+//        ListNode list1 = new ListNode();
+//
+//        ListNode head1 = null;
+//
+//        head1 = list1.insertAtNthPos(null, 1, 0);
+//        head1 = list1.insertAtTail(head1, 4);
+//        head1 = list1.insertAtTail(head1, 5);
+//
+//        ListNode list2 = new ListNode();
+//
+//        ListNode head2 = null;
+//
+//        head2 = list2.insertAtNthPos(null, 1, 0);
+//        head2 = list2.insertAtTail(head2, 3);
+//        head2 = list2.insertAtTail(head2, 4);
+//
+//        ListNode list3 = new ListNode();
+//
+//        ListNode head3 = null;
+//
+//        head3 = list3.insertAtNthPos(null, 2, 0);
+//        head3 = list3.insertAtTail(head3, 6);
+//
+//        ListNode[] listNodes = {head1, head2, head3};
+//
+//        list1.displayLL(head1);
+//        list2.displayLL(head2);
+//        list3.displayLL(head3);
+//
+////        System.out.println(Arrays.toString(listNodes));
+//
+//        ListNode listFinal = new ListNode();
+//
+//        ListNode headFinal = null;
+//
+////        headFinal = listFinal.insertAtNthPos(null, Integer.MAX_VALUE, 0);
+//
+////        headFinal.displayLL(headFinal);
+//
+//
+//        headFinal = mergeTwoSortedLists.mergeKLists(listNodes);
+////
+////        headFinal = listFinal.deleteAtHead(headFinal);
+////
+//        headFinal.displayLL(headFinal);
+
+        /*
+
+         **************** Reverse nodes in k-group ****************
+
+         */
+
+
         ListNode list1 = new ListNode();
 
         ListNode head1 = null;
 
-        head1 = list1.insertAtNthPos(null, 10, 0);
-        head1 = list1.insertAtTail(head1, 1);
-        head1 = list1.insertAtTail(head1, 13);
-        head1 = list1.insertAtTail(head1, 6);
-        head1 = list1.insertAtTail(head1, 9);
+        head1 = list1.insertAtNthPos(null, 1, 0);
+        head1 = list1.insertAtTail(head1, 2);
+        head1 = list1.insertAtTail(head1, 3);
+        head1 = list1.insertAtTail(head1, 4);
         head1 = list1.insertAtTail(head1, 5);
 
         head1.displayLL(head1);
 
-        ListNode list2 = new ListNode();
-        ListNode head2 = null;
+        head1 = reverseLinkedList.reverseKGroup(head1, 2);
 
-
-        head2 = list2.insertAtNthPos(null, 1000000, 0);
-        head2 = list2.insertAtTail(head2, 1000001);
-        head2 = list2.insertAtTail(head2, 1000002);
-
-
-        head2.displayLL(head2);
-
-        head1 = moreOnLinkedLists.mergeInBetween(head1, 3, 4, head2);
         head1.displayLL(head1);
 
-
-//       head1.displayLL(head1);
     }
 }

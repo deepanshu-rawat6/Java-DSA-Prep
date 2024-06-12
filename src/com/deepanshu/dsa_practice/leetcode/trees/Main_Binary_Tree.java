@@ -33,8 +33,8 @@ public class Main_Binary_Tree {
 //        int[] nums = {1, 2};
 //        int[] nums = {5, 4, 8, 11, Integer.MIN_VALUE, 13, 4, 7, 2, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, 1};
 //        int[] nums = {4, 2, Integer.MIN_VALUE, 3, 1};
-        int[] nums = {4, 2, 6, 3, 1, 5, Integer.MIN_VALUE};
-        root = binaryTree.populate(nums);
+//        int[] nums = {4, 2, 6, 3, 1, 5, Integer.MIN_VALUE};
+//        root = binaryTree.populate(nums);
 
 
 
@@ -83,7 +83,11 @@ public class Main_Binary_Tree {
 
 //        System.out.println(treeTraversals.hasPathSum(root, 22));
 
-        root = treeTraversals.addOneRow(root, 1, 3);
-        binaryTree.prettyDisplay();
+//        root = treeTraversals.addOneRow(root, 1, 3);
+//        binaryTree.prettyDisplay();
+
+//        int[] nums = {3,9,20, Integer.MIN_VALUE, Integer.MIN_VALUE,15,7};
+//        root = binaryTree.populate(nums);
+//        System.out.println(treeTraversals.isBalanced(root));
     }
 }
