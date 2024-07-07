@@ -12,6 +12,7 @@ public class Main_Binary_Tree {
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         BinarySearchTree binarySearchTree = new BinarySearchTree();
+        AVLTree avlTree = new AVLTree();
         TreeTraversals treeTraversals = new TreeTraversals();
 
 
@@ -89,5 +90,27 @@ public class Main_Binary_Tree {
 //        int[] nums = {3,9,20, Integer.MIN_VALUE, Integer.MIN_VALUE,15,7};
 //        root = binaryTree.populate(nums);
 //        System.out.println(treeTraversals.isBalanced(root));
+
+//        int[] nums = {1, 7, 0, 7, -8, Integer.MIN_VALUE, Integer.MIN_VALUE};
+//        int[] nums = {-100, -200, -300, -20, -5, -10, Integer.MIN_VALUE};
+//        root = binaryTree.populate(nums);
+//        binaryTree.prettyDisplay();
+//        System.out.println(binaryTree.height(root));
+//        System.out.println(treeTraversals.maxLevelSum(root));
+
+//        int[] nums = {-10, -3, 0, 5, 9};
+//        root = treeTraversals.sortedArrayToBST(nums);
+//        binaryTree.prettyDisplay(root, 0);
+
+
+
+
+//        AVL Tree
+//        for (int i = 0; i < 10; i++) {
+//            avlTree.insert(i);
+//        }
+//        System.out.println(avlTree.height());
+//
+//        avlTree.prettyDisplay();
     }
 }

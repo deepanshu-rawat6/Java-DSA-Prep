@@ -102,7 +102,7 @@ public class BinaryTree {
         prettyDisplay(root, 0);
     }
 
-    private  void prettyDisplay(TreeNode treeNode, int level) {
+    private void prettyDisplay(TreeNode treeNode, int level) {
         if (treeNode == null) return;
 
         prettyDisplay(treeNode.right, level + 1);
@@ -162,5 +162,11 @@ public class BinaryTree {
         postOrder(treeNode.left);
         postOrder(treeNode.right);
         System.out.print(treeNode.val + " ");
+    }
+
+    public int height(TreeNode root) {
+        if (root == null) return 0;
+
+        return Math.max(height(root.left), height(root.right)) + 1;
     }
 }

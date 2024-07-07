@@ -518,22 +518,78 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
     }
 
 //    https://leetcode.com/problems/balanced-binary-tree/
-    public boolean isBalanced(TreeNode root) {
-        if (root == null) return true;
+//    public boolean isBalanced(TreeNode root) {
+//        if (root == null) return true;
+//
+//        return heightTree(root) != -1;
+//    }
+//
+//    public int heightTree(TreeNode root) {
+//        if (root == null) return 0;
+//
+//        int leftHeight = heightTree(root.left);
+//        int rightHeight = heightTree(root.right);
+//
+//        if (leftHeight == -1 || rightHeight == -1)  return -1;
+//
+//        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+//
+//        return Math.max(leftHeight, rightHeight) + 1;
+//    }
 
-        return heightTree(root) != -1;
+
+//    Maximum Level Sum of a Binary Tree
+//    https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/description/
+    public int maxLevelSum(TreeNode root) {
+        int max = Integer.MIN_VALUE, maximalLevel = 1;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.offer(root);
+
+        for (int level = 1; !queue.isEmpty(); ++level) {
+            int sum = 0;
+
+            for (int size = queue.size(); size > 0; --size) {
+                TreeNode treeNode = queue.poll();
+                assert treeNode != null;
+                sum += treeNode.val;
+                if (treeNode.left != null) {
+                    queue.offer(treeNode.left);
+                }
+
+                if (treeNode.right != null) {
+                    queue.offer(treeNode.right);
+                }
+            }
+
+            if (max < sum) {
+                max = sum;
+                maximalLevel = level;
+            }
+        }
+
+        return maximalLevel;
     }
 
-    public int heightTree(TreeNode root) {
-        if (root == null) return 0;
 
-        int leftHeight = heightTree(root.left);
-        int rightHeight = heightTree(root.right);
+//    Convert Sorted Array to Binary Search Tree
+//    https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return helper(nums, 0, nums.length - 1);
+    }
 
-        if (leftHeight == -1 || rightHeight == -1)  return -1;
+    public TreeNode helper(int[] nums, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int mid = start + (end - start) / 2;
 
-        if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+        TreeNode root = new TreeNode(nums[mid]);
 
-        return Math.max(leftHeight, rightHeight) + 1;
+        root.left = helper(nums, start, mid - 1);
+        root.right = helper(nums, mid + 1, end);
+
+        return root;
     }
 }

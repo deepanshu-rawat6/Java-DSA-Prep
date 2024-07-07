@@ -1,11 +1,18 @@
 package com.deepanshu.dsa_practice.leetcode.trees;
 
-public class BinarySearchTree {
+import com.sun.source.tree.Tree;
+
+public class AVLTree {
+
+    public AVLTree() {}
 
     private TreeNode root;
-    public BinarySearchTree() {}
 
-    public int height(TreeNode treeNode) {
+    public int height() {
+        return height(root);
+    }
+
+    private int height(TreeNode treeNode) {
         if (treeNode == null) {
             return -1;
         }
@@ -37,7 +44,65 @@ public class BinarySearchTree {
 
         treeNode.height = Math.max(height(treeNode.left), height(treeNode.right)) + 1;
 
+        return rotate(treeNode);
+    }
+
+    private TreeNode rotate(TreeNode treeNode) {
+        if (height(treeNode.left) - height(treeNode.right) > 1) {
+//            left heavy
+            if (height(treeNode.left.left) - height(treeNode.left.right) > 0) {
+//                left-left
+                return rightRotate(treeNode);
+            }
+
+            if (height(treeNode.left.left) - height(treeNode.left.right) < 0) {
+//                left-right
+                treeNode.left = leftRotate(treeNode.left);
+                return rightRotate(treeNode);
+            }
+        }
+
+        if (height(treeNode.left) - height(treeNode.right) < -1) {
+//            right heavy
+            if (height(treeNode.right.left) - height(treeNode.right.right) < 0) {
+//                right-right
+                return leftRotate(treeNode);
+            }
+
+            if (height(treeNode.right.left) - height(treeNode.right.right) > 0) {
+//                right-left
+                treeNode.right = rightRotate(treeNode.right);
+                return leftRotate(treeNode);
+            }
+        }
+
         return treeNode;
+    }
+
+    private TreeNode rightRotate(TreeNode p) {
+        TreeNode c = p.left;
+        TreeNode t = c.right;
+
+        c.right = p;
+        p.left = t;
+
+        p.height = Math.max(height(p.left), height(p.right)) + 1;
+        c.height = Math.max(height(c.left), height(c.right)) + 1;
+
+        return c;
+    }
+
+    private TreeNode leftRotate(TreeNode c) {
+        TreeNode p = c.right;
+        TreeNode t = p.left;
+
+        p.left = c;
+        c.right = t;
+
+        p.height = Math.max(height(p.left), height(p.right)) + 1;
+        c.height = Math.max(height(c.left), height(c.right)) + 1;
+
+        return p;
     }
 
     public void populate(int[] nums) {
@@ -50,7 +115,7 @@ public class BinarySearchTree {
         populatedSorted(nums, 0, nums.length);
     }
 
-//    Only works on sorted arrays, in general we use self-balancing binary trees
+    //    Only works on sorted arrays, in general we use self-balancing binary trees
 //    TC: N log N
     private void populatedSorted(int[] nums, int start, int end) {
         if (start >= end) {
@@ -157,7 +222,4 @@ public class BinarySearchTree {
         postOrder(treeNode.right);
         System.out.print(treeNode.val + " ");
     }
-
 }
-
-
