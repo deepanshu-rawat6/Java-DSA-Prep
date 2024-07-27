@@ -1,5 +1,7 @@
 package com.deepanshu.dsa_practice.leetcode.linkedlist;
 
+import java.util.List;
+
 public class ReverseLinkedList {
     void displayLL(ListNode head) {
         if (head == null) {
@@ -65,6 +67,29 @@ public class ReverseLinkedList {
         slow.next = null;
 
         return mid;
+    }
+
+//    https://leetcode.com/problems/reverse-linked-list-ii/
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode prev = dummy;
+
+        for (int i = 0;  i < left - 1; i++) {
+            prev = prev.next;
+        }
+
+        ListNode curr = prev.next;
+
+        for (int i = 0; i < right - left; i++) {
+            ListNode next = curr.next;
+            curr.next = next.next;
+            next.next = prev.next;
+            prev.next = next;
+        }
+
+        return dummy.next;
     }
 
 //    Reverse Nodes in k-Group

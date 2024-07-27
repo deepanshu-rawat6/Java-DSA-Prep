@@ -592,4 +592,42 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
         return root;
     }
+
+//    Delete Nodes And Return Forest
+//    https://leetcode.com/problems/delete-nodes-and-return-forest/description/?envType=daily-question&envId=2024-07-17
+
+    HashSet<Integer> setDelete;
+    List<TreeNode> forest;
+
+    public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
+        setDelete = new HashSet<>();
+        forest = new ArrayList<>();
+
+        for (int i : to_delete) {
+            setDelete.add(i);
+        }
+
+        root = helper(root);
+
+        if (root != null) forest.add(root);
+
+        return forest;
+    }
+
+
+    private TreeNode helper(TreeNode root) {
+        if (root == null) return null;
+
+        root.left = helper(root.left);
+        root.right = helper(root.right);
+
+        if (setDelete.contains(root.val)) {
+            if (root.left != null) forest.add(root.left);
+            if (root.right != null) forest.add(root.right);
+
+            return null;
+        }
+
+        return root;
+    }
 }

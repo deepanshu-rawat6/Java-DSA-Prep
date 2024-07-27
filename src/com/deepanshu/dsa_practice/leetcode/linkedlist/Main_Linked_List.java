@@ -380,26 +380,66 @@ public class Main_Linked_List {
 
         /*
 
+         **************** Reverse linked list II ****************
+
+         */
+
+
+//        ListNode list1 = new ListNode();
+//
+//        ListNode head1 = null;
+//
+//        head1 = list1.insertAtNthPos(null, 1, 0);
+//        head1 = list1.insertAtTail(head1, 2);
+//        head1 = list1.insertAtTail(head1, 3);
+//        head1 = list1.insertAtTail(head1, 4);
+//        head1 = list1.insertAtTail(head1, 5);
+//
+//        head1.displayLL(head1);
+//
+//        head1 = reverseLinkedList.reverseBetween(head1, 2, 4);
+//
+//        head1.displayLL(head1);
+
+        /*
+
          **************** Reverse nodes in k-group ****************
 
          */
 
 
-        ListNode list1 = new ListNode();
+//        ListNode list1 = new ListNode();
+//
+//        ListNode head1 = null;
+//
+//        head1 = list1.insertAtNthPos(null, 1, 0);
+//        head1 = list1.insertAtTail(head1, 2);
+//        head1 = list1.insertAtTail(head1, 3);
+//        head1 = list1.insertAtTail(head1, 4);
+//        head1 = list1.insertAtTail(head1, 5);
+//
+//        head1.displayLL(head1);
+//
+//        head1 = reverseLinkedList.reverseKGroup(head1, 2);
+//
+//        head1.displayLL(head1);
 
-        ListNode head1 = null;
+        /*
 
-        head1 = list1.insertAtNthPos(null, 1, 0);
-        head1 = list1.insertAtTail(head1, 2);
-        head1 = list1.insertAtTail(head1, 3);
-        head1 = list1.insertAtTail(head1, 4);
-        head1 = list1.insertAtTail(head1, 5);
+         **************** LRU Cache ****************
 
-        head1.displayLL(head1);
+         */
 
-        head1 = reverseLinkedList.reverseKGroup(head1, 2);
+        LRUCache lRUCache = new LRUCache(2);
 
-        head1.displayLL(head1);
-
+        lRUCache.put(1, 1);
+        lRUCache.put(2, 2);
+        System.out.println(lRUCache.get(1));
+        lRUCache.put(3, 3);
+        System.out.println(lRUCache.get(2));
+        lRUCache.put(4, 4);
+        System.out.println(lRUCache.get(1));
+        System.out.println(lRUCache.get(3));
+        System.out.println(lRUCache.get(4));
     }
 }

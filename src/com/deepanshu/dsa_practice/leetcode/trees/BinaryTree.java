@@ -1,9 +1,7 @@
 package com.deepanshu.dsa_practice.leetcode.trees;
 
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class BinaryTree {
 
@@ -102,7 +100,7 @@ public class BinaryTree {
         prettyDisplay(root, 0);
     }
 
-    private void prettyDisplay(TreeNode treeNode, int level) {
+    public void prettyDisplay(TreeNode treeNode, int level) {
         if (treeNode == null) return;
 
         prettyDisplay(treeNode.right, level + 1);
@@ -168,5 +166,133 @@ public class BinaryTree {
         if (root == null) return 0;
 
         return Math.max(height(root.left), height(root.right)) + 1;
+    }
+
+//    https://leetcode.com/problems/create-binary-tree-from-descriptions/description/
+//    Create Binary Tree From Descriptions
+    public TreeNode createBinaryTree(int[][] desc) {
+        HashMap<Integer, TreeNode> map = new HashMap<>();
+        Set<Integer> children = new HashSet<>();
+
+        for (int[] des : desc) {
+            int parent = des[0], child = des[1], isLeft = des[2];
+            children.add(child);
+
+            TreeNode node = map.getOrDefault(parent, new TreeNode(parent));
+            if (isLeft == 1) {
+                node.left = map.getOrDefault(child, new TreeNode(child));
+                map.put(child, node.left);
+            } else {
+                node.right = map.getOrDefault(child, new TreeNode(child));
+                map.put(child, node.right);
+            }
+
+            map.put(parent, node);
+        }
+
+        int root = -1;
+        for (int[] des : desc) {
+            if (!children.contains(des[0])) {
+                root = des[0];
+                break;
+            }
+        }
+
+        return map.getOrDefault(root, null);
+    }
+
+
+//    StringBuilder sb;
+//    public String getDirections(TreeNode root, int startValue, int destValue) {
+//        sb = new StringBuilder();
+//
+//        if (root == null) return "";
+//
+//        root = helper(root, startValue, destValue, sb);
+//
+//        return sb.toString();
+//    }
+//
+//    private TreeNode helper(TreeNode root, int startValue, int destValue, StringBuilder sb) {
+//        if (root == null) return null;
+//
+//        if (root.val == startValue || root.val == destValue) {
+//            sb.append('U');
+//            return root;
+//        }
+//
+//        TreeNode left = helper(root.left, startValue, destValue, sb.append('L'));
+//        TreeNode right = helper(root.right, startValue, destValue, sb.append('R'));
+//
+//        if (left != null && right != null) {
+//            return root;
+//        }
+//
+//        return left != null ? left : right;
+//    }
+
+
+    public String getDirections(TreeNode root, int startValue, int destValue) {
+        if (root == null) return "";
+
+        StringBuilder startPath = new StringBuilder();
+        StringBuilder destPath = new StringBuilder();
+
+        TreeNode lca = findLCA(root, startValue, destValue);
+
+        System.out.println(lca.val);
+
+        findStartPath(lca, startValue, startPath);
+        findDestPath(lca, destValue, destPath);
+
+        return startPath.toString() + destPath.reverse().toString();
+    }
+
+    private boolean findStartPath(TreeNode root, int startValue, StringBuilder startPath) {
+        if (root == null) return false;
+
+        if (root.val == startValue) {
+            return true;
+        }
+
+        if (findStartPath(root.left, startValue, startPath) || findStartPath(root.right, startValue, startPath)) {
+            startPath.append('U');
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean findDestPath(TreeNode root, int destValue, StringBuilder destPath) {
+        if (root == null) return false;
+
+        if (root.val == destValue) {
+            return true;
+        }
+
+        if (findDestPath(root.right, destValue, destPath)) {
+            destPath.append('R');
+            return true;
+        }
+
+        if (findDestPath(root.left, destValue, destPath)) {
+            destPath.append('L');
+            return true;
+        }
+
+        return false;
+    }
+
+    private TreeNode findLCA(TreeNode root, int startValue, int destValue) {
+        if (root == null) return null;
+
+        if (root.val == startValue || root.val == destValue) return root;
+
+        TreeNode left = findLCA(root.left, startValue, destValue);
+        TreeNode right = findLCA(root.right, startValue, destValue);
+
+        if (left != null && right != null) return root;
+
+        return left == null ? right : left;
     }
 }

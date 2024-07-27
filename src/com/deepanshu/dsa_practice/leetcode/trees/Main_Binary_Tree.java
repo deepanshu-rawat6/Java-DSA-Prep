@@ -112,5 +112,49 @@ public class Main_Binary_Tree {
 //        System.out.println(avlTree.height());
 //
 //        avlTree.prettyDisplay();
+
+
+        /*
+
+         **************** Create Binary Tree From Descriptions ****************
+
+         */
+
+//        int[][] desc = {{20,15,1},{20,17,0},{50,20,1},{50,80,0},{80,19,1}};
+//        root = binaryTree.createBinaryTree(desc);
+//
+//        binaryTree.prettyDisplay(root, 0);
+
+
+        /*
+
+         **************** Step-By-Step Directions From a Binary Tree Node to Another ****************
+
+         */
+
+//        int nums[] = {5, 1, 2, 3, Integer.MIN_VALUE, 6, 4};
+//        int startVal = 3, destVal =6;
+//        root = binaryTree.populate(nums);
+//
+//        System.out.println(binaryTree.getDirections(root, startVal, destVal));
+
+        /*
+
+         **************** Step-By-Step Directions From a Binary Tree Node to Another ****************
+
+         */
+
+//        int nums[] = {1,2,3,4,5,6,7};
+//        root = binaryTree.populate(nums);
+//
+//        binaryTree.prettyDisplay(root, 0);
+//
+//        int[] to_delete = {3, 5};
+//
+//        List<TreeNode> forest = treeTraversals.delNodes(root, to_delete);
+//
+//        for (TreeNode node : forest) {
+//            System.out.println(node.val);
+//        }
     }
 }
