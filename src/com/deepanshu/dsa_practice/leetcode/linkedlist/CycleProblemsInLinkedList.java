@@ -19,6 +19,7 @@ public class CycleProblemsInLinkedList {
         }
         return;
     }
+
     public boolean hasCycle(ListNode head) {
         ListNode fastPointer = head;
         ListNode slowPointer = head;
